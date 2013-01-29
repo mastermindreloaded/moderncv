@@ -290,12 +290,12 @@
   \hspace{0pt}\par\vspace{-\baselineskip}\vspace{-\parskip}}
 
 \renewcommand*{\makeletterclosing}{
-  \@closing\\[3em]%
+  \@closing \ifthenelse{\isundefined{\spacebeforeclosing}}{\\[3em]}{\\[\spacebeforeclosing]}    %
   {\bfseries \@firstname~\@familyname}%
   \ifthenelse{\isundefined{\@enclosure}}{}{%
     \\%
     \vfill%
-    {\color{color2}\itshape\enclname: \@enclosure}}}
+    {\color{color2}\itshape Enclosure: \@enclosure}}}
 
 
 \endinput
